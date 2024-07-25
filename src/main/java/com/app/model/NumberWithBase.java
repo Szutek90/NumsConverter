@@ -1,7 +1,12 @@
 package com.app.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.math.BigInteger;
 
+@EqualsAndHashCode
+@ToString
 public class NumberWithBase {
     private final int baseCode;
     private final int targetCode;
@@ -29,32 +34,6 @@ public class NumberWithBase {
 
     public String codeToTargetCode() {
         return new BigInteger(String.valueOf(value), baseCode).toString(targetCode).toUpperCase();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        NumberWithBase that = (NumberWithBase) o;
-        return baseCode == that.baseCode && targetCode == that.targetCode && value == that.value;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = baseCode;
-        result = 31 * result + targetCode;
-        result = 31 * result + value;
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "NumberWithBase{" +
-                "baseCode=" + baseCode +
-                ", targetCode=" + targetCode +
-                ", value=" + value +
-                '}';
     }
 
 }

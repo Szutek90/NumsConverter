@@ -1,6 +1,6 @@
-package com.app.converter.impl;
+package com.app.service.impl;
 
-import com.app.converter.Converter;
+import com.app.service.Converter;
 import com.app.model.NumberWithBase;
 
 import java.util.LinkedList;
